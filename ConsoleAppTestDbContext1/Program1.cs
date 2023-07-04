@@ -12,7 +12,7 @@ namespace ConsoleAppTestDbContext1
             DbContextOptionsBuilder<RepositoryDbContext> optionsBuilder = new DbContextOptionsBuilder<RepositoryDbContext>();
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SwitchPortCofiguratorApi;Username=postgres;Password=1234");
 
-            int Id = 27;
+            int Id = 37;
 
             WaitPressAnyKey("Press any key to create db context 1...");
 
@@ -29,9 +29,11 @@ namespace ConsoleAppTestDbContext1
 
                 AreaEntity areaEntityDelete = dbContext1.Areas.Find(Id);
 
-                areaEntityDelete.Name = "Test -1";
+                //areaEntityDelete.Name = "Test -1";
 
-                dbContext1.Areas.Update(areaEntityDelete);
+                dbContext1.Areas.Remove(areaEntityDelete);
+
+                //dbContext1.Areas.Update(areaEntityDelete);
 
                 WaitPressAnyKey("Press any key to save changes 1...");
 
@@ -54,7 +56,7 @@ namespace ConsoleAppTestDbContext1
         static void WaitPressAnyKey(string message = null)
         {
             Console.WriteLine(string.IsNullOrWhiteSpace(message) ? "Press any key to continue..." : message);
-            Console.ReadKey(false);
+            Console.ReadKey(true);
         }
 
         static void PrintSeparator() =>
