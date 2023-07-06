@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchPortConfigurator.Api.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SwitchPortConfigurator.Api.Repository.Db", "SwitchPortConfigurator.Api.Repository.Db\SwitchPortConfigurator.Api.Repository.Db.csproj", "{C2252A0F-AF8F-4478-8731-E9659798ACCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTestDbContext1", "ConsoleAppTestDbContext1\ConsoleAppTestDbContext1.csproj", "{5647778A-1EB7-4ED7-ADAC-441A3C746D78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTestDbContext1", "ConsoleAppTestDbContext1\ConsoleAppTestDbContext1.csproj", "{5647778A-1EB7-4ED7-ADAC-441A3C746D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTestDbContext2", "ConsoleAppTestDbContext2\ConsoleAppTestDbContext2.csproj", "{6FA08906-FB87-48D9-873F-0C97AD68F307}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5647778A-1EB7-4ED7-ADAC-441A3C746D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5647778A-1EB7-4ED7-ADAC-441A3C746D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5647778A-1EB7-4ED7-ADAC-441A3C746D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA08906-FB87-48D9-873F-0C97AD68F307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA08906-FB87-48D9-873F-0C97AD68F307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA08906-FB87-48D9-873F-0C97AD68F307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA08906-FB87-48D9-873F-0C97AD68F307}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

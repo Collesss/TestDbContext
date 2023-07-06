@@ -3,22 +3,22 @@ using Microsoft.EntityFrameworkCore.Storage;
 using SwitchPortConfigurator.Api.Repository.Db;
 using SwitchPortConfigurator.Api.Repository.Entities;
 
-namespace ConsoleAppTestDbContext1
+namespace ConsoleAppTestDbContext2
 {
-    internal class Program1
+    internal class Program2
     {
         static void Main(string[] args)
         {
             DbContextOptionsBuilder<RepositoryDbContext> optionsBuilder = new DbContextOptionsBuilder<RepositoryDbContext>();
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SwitchPortCofiguratorApi;Username=postgres;Password=1234");
 
-            int Id = 44;
+            //int Id = 42;
 
-            WaitPressAnyKey("Press any key to create db context 1...");
+            WaitPressAnyKey("Press any key to create db context 2...");
 
             using (RepositoryDbContext dbContext1 = new RepositoryDbContext(optionsBuilder.Options))
             {
-                WaitPressAnyKey("Press any key to start transaction 1...");
+                WaitPressAnyKey("Press any key to start transaction 2...");
 
                 IDbContextTransaction transaction1 = dbContext1.Database.BeginTransaction(System.Data.IsolationLevel.Snapshot);
                 //AreaEntity areaEntity = new AreaEntity { Id = 100, Name = "TestAdd02" };
@@ -27,19 +27,19 @@ namespace ConsoleAppTestDbContext1
 
                 //dbContext.Areas.Add(areaEntity);
 
-                AreaEntity areaEntityDelete = dbContext1.Areas.Find(Id);
+                AreaEntity areaEntityAdd = new AreaEntity { Name = "New 3" };
 
                 //areaEntityDelete.Name = "Test -1";
 
-                dbContext1.Areas.Remove(areaEntityDelete);
+                dbContext1.Areas.Add(areaEntityAdd);
 
                 //dbContext1.Areas.Update(areaEntityDelete);
 
-                WaitPressAnyKey("Press any key to save changes 1...");
+                WaitPressAnyKey("Press any key to save changes 2...");
 
                 dbContext1.SaveChanges();
 
-                WaitPressAnyKey("Press any key to commit 1...");
+                WaitPressAnyKey("Press any key to commit 2...");
 
                 transaction1.Commit();
 

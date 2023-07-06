@@ -12,7 +12,7 @@ namespace ConsoleAppTestDbContext
             DbContextOptionsBuilder<RepositoryDbContext> optionsBuilder = new DbContextOptionsBuilder<RepositoryDbContext>();
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SwitchPortCofiguratorApi;Username=postgres;Password=1234");
 
-            int Id = 38;
+            int Id = 43;
 
             WaitPressAnyKey("Press any key to create db context...");
 
@@ -27,11 +27,11 @@ namespace ConsoleAppTestDbContext
 
                 //dbContext.Areas.Add(areaEntity);
 
-                AreaEntity areaEntityDelete = dbContext1.Areas.Find(Id);
+                AreaEntity areaEntityUpdate = dbContext1.Areas.Find(Id);
 
-                areaEntityDelete.Name = "Test -2";
+                areaEntityUpdate.Name = "Test -001";
 
-                dbContext1.Areas.Update(areaEntityDelete);
+                dbContext1.Areas.Update(areaEntityUpdate);
 
                 WaitPressAnyKey("Press any key to save changes...");
 
