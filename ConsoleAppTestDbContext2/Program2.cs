@@ -27,7 +27,7 @@ namespace ConsoleAppTestDbContext2
 
                 //dbContext.Areas.Add(areaEntity);
 
-                AreaEntity areaEntityAdd = new AreaEntity { Name = "New 3" };
+                AreaEntity areaEntityAdd = new AreaEntity { Name = "New 001" };
 
                 //areaEntityDelete.Name = "Test -1";
 
@@ -40,6 +40,8 @@ namespace ConsoleAppTestDbContext2
                 dbContext1.SaveChanges();
 
                 WaitPressAnyKey("Press any key to commit 2...");
+
+                PrintAreaWithSeparator(dbContext1);
 
                 transaction1.Commit();
 

@@ -12,7 +12,7 @@ namespace ConsoleAppTestDbContext1
             DbContextOptionsBuilder<RepositoryDbContext> optionsBuilder = new DbContextOptionsBuilder<RepositoryDbContext>();
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SwitchPortCofiguratorApi;Username=postgres;Password=1234");
 
-            int Id = 44;
+            int Id = 14;
 
             WaitPressAnyKey("Press any key to create db context 1...");
 
@@ -38,6 +38,8 @@ namespace ConsoleAppTestDbContext1
                 WaitPressAnyKey("Press any key to save changes 1...");
 
                 dbContext1.SaveChanges();
+
+                PrintAreaWithSeparator(dbContext1);
 
                 WaitPressAnyKey("Press any key to commit 1...");
 

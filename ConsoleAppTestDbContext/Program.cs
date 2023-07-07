@@ -12,7 +12,7 @@ namespace ConsoleAppTestDbContext
             DbContextOptionsBuilder<RepositoryDbContext> optionsBuilder = new DbContextOptionsBuilder<RepositoryDbContext>();
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SwitchPortCofiguratorApi;Username=postgres;Password=1234");
 
-            int Id = 43;
+            int Id = 14;
 
             WaitPressAnyKey("Press any key to create db context...");
 
@@ -20,7 +20,7 @@ namespace ConsoleAppTestDbContext
             {
                 WaitPressAnyKey("Press any key to start transaction...");
 
-                IDbContextTransaction transaction1 = dbContext1.Database.BeginTransaction(System.Data.IsolationLevel.Serializable);
+                IDbContextTransaction transaction1 = dbContext1.Database.BeginTransaction(System.Data.IsolationLevel.Snapshot);
                 //AreaEntity areaEntity = new AreaEntity { Id = 100, Name = "TestAdd02" };
 
                 PrintAreaWithSeparator(dbContext1);
@@ -36,6 +36,8 @@ namespace ConsoleAppTestDbContext
                 WaitPressAnyKey("Press any key to save changes...");
 
                 dbContext1.SaveChanges();
+
+                PrintAreaWithSeparator(dbContext1);
 
                 WaitPressAnyKey("Press any key to commit...");
 
